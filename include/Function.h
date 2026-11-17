@@ -5,6 +5,7 @@
 class Function
 {
     public:
+        class CritPointNotFound {};
         Function(int k = 0, Point pk);
         double f(Point p);
         double Gradient_x(Point p);

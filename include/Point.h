@@ -2,17 +2,17 @@
 #define POINT_H
 #include <ostream>
 
-class Point {
-public:
-  class PointNotExpected {};
+class Point 
+{
+  public:
+    class PointNotExpected {};
+    Point(double x = 0, double y = 0);
+    Point(const Point& p);
+    double GetX() const { return x; }
+    double GetY() const { return y; }
 
-  Point();
-  Point(double x, double y);
-  double GetX() const { return x; }
-  double GetY() const { return y; }
-
-private:
-  double x, y;
+  private:
+    double x, y;
 };
 
 // siamo costretti a fare l'overloading come helper function

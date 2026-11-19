@@ -121,7 +121,7 @@ double Func_8::Gradient_x(Point p) const                    // f8'(x)= pi * sin(
 {
     return ((std::numbers::pi)*sin((std::numbers::pi)*p.GetX()));
 };
-double Func_8::Gradient_y(Point p) const                    // f8'(x)= pi * sin( pi* y)
+double Func_8::Gradient_y(Point p) const                    // f8'(y)= pi * sin( pi* y)
 {
     return ((std::numbers::pi)*sin((std::numbers::pi)*p.GetY()));
 };

@@ -14,6 +14,7 @@ Verza Federico______: f2, f4, f6, f8;
 
 
 Difficoltà incontrate:
+    -indentazione automatica di alcuni editor rendeva i file molto diversi tra loro
     - bricked pc of Verza Federico date 16/11
             (resolved in date 19/11 15:00) robbed a pc from a friend
-            consequences: part of the work stalled until resolution came
+            consequences: part of the work was stalled until resolution came

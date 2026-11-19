@@ -17,7 +17,7 @@ class Function
     
     // funzioni che vanno = 0 cosi' da non poter essere
     // invocare dalla classe padre
-    virtual double f(Point p) const = 0;  // calcolo della funzione nel punto, nel casosia chiamata direttamente dall'utente da come risultato 0
+    virtual double f(Point p) const = 0;  // calcolo della funzione nel punto, nel caso sia chiamata direttamente dall'utente da come risultato 0
     virtual double Gradient_x(Point p) const = 0;  // componente x del gradiente nel punto
     virtual double Gradient_y(Point p) const = 0;  // componente y del gradiente nel punto
     // funzioni comuni a tutte e 8 le funzioni

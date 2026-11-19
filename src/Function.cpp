@@ -1,7 +1,7 @@
 #include "../include/Function.h"
 #include <cmath>
 
-Function::Function(int k, Point pk)
+Function::Function(int k, Point pk)     //costruttore
   : k{k}, pk{pk}
 {}
 //---------------------------------------------------------------------------------------------------
@@ -21,38 +21,35 @@ double Function::Gradient_y(Point p) const
             }
 //---------------------------------------------------------------------------------------------------
 // funzioni comuni da definire qui'
-double Function::CurrentError(double f_in_pk, double min_value)
+double Function::CurrentError(double f_in_pk, double min_value) //errore massimo in un dato punto??????????????????????
             {
             return f_in_pk - min_value;
             }
 
-
-// credo che mi da' un loop infinito se la richiamo :(
-// ho messo una prova di una mia Func_1 commentata nel main
 Point Function::GradientDescent(Point p0, double f_in_p0)
-{
-  int max_iterations = 10000; // numero massimo possibile di iterazioni, da decidere
-  double tolerance = 0.00001; // tolleranza per il punto quasi-critico, da decidere
-  double a = 0.25;
-  while (k <= max_iterations)
-  {
-    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)
     {
-      toString();
-      return p0;
-    }
-    else
+    int max_iterations = 10000; // numero massimo possibile di iterazioni, da decidere CAMBIO A 100 BY FED
+    double tolerance = 0.00001; // tolleranza per il punto quasi-critico, da decidere
+    double a = 0.25;
+    while (k <= max_iterations)
     {
-      p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
-      if (k % 10 == 0)
-      {
-        toString();
-      }
-      ++k;
+        if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       //si ferma se è nella tolleranza debugging per capire che fa
+        {
+            toString();                                                     //e spara il toString debugging per capire che fa
+            return p0;
+        }
+        else
+        {
+            p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
+            if (k % 10 == 0)
+            {
+                toString();
+            }
+        ++k;
+        }
     }
-  }
-  throw CritPointNotFound();
-}
+    throw CritPointNotFound();
+    }
 
   double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
 {

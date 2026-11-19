@@ -8,11 +8,12 @@
 class Function
 {
   public:
-    class CritPointNotFound {};
+    class CritPointNotFound {};                                 //classe errore
     // costruttore
-    Function(int k = 0, Point pk = {});
-    double CurrentError(double f_in_pk, double min_value);
-    Point GradientDescent(Point p0, double f_in_p0);
+    Function(int k = 0, Point pk = {});//?????????????????????????????????????????????????????????????????????
+
+    double CurrentError(double f_in_pk, double min_value);      //calcolo errore nel punto corrente????????????
+    Point GradientDescent(Point p0, double f_in_p0);            //calcolatore tutti i passi successivi calcolo gradiente??????????????
     
     
     // funzioni che vanno = 0 cosi' da non poter essere
@@ -26,9 +27,9 @@ class Function
   private:
     int k;
     Point pk;
-    double GradientNorm(double gradient_x_in_p, double gradient_y_in_p);
-    Point NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double a);
-    std::ostream &toString();
+    double GradientNorm(double gradient_x_in_p, double gradient_y_in_p);                    //velocità di cambiamento della funzione in un dato punto?????????
+    Point NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double a);   //passo singolo successivo
+    std::ostream &toString();                                                               //toString come da specifiche
 };
 
 #endif

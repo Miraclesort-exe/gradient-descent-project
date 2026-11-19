@@ -2,7 +2,10 @@
 #define FUNC_N_H
 #include "Function.h"
 
-class Func_1 : public Function
+//In questo header vengono definite 8 sottoclassi che si rifanno alle funzioni fornite dalle specifiche del progetto
+//Ogni classe sovvrascrive i 3 metodi "virtual" di Function
+
+class Func_1 : public Function                      
 {
   double f(Point p) const override;
   double Gradient_x(Point p) const override;

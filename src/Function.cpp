@@ -4,25 +4,28 @@
 Function::Function(int k, Point pk)
   : k{k}, pk{pk}
 {}
-// le 3 funzioni per ogni classe func_n
+//---------------------------------------------------------------------------------------------------
+// le 3 funzioni che devono essere ridefinite nelle classi persenti in Func_n.h
+            //Se chiamate dall'utente senza passare per nessuna classe di Func_n.h daranno sempre come risultato 0
 double Function::f(Point pk) const
-{
-  return 0.0;
-}
+            {
+            return 0.0;
+            }
 double Function::Gradient_x(Point p) const
-{
-  return 0.0;
-}
+            {
+            return 0.0;
+            }
 double Function::Gradient_y(Point p) const
-{
-  return 0.0;
-}
-
+            {
+            return 0.0;
+            }
+//---------------------------------------------------------------------------------------------------
 // funzioni comuni da definire qui'
 double Function::CurrentError(double f_in_pk, double min_value)
-{
-  return f_in_pk - min_value;
-}
+            {
+            return f_in_pk - min_value;
+            }
+
 
 // credo che mi da' un loop infinito se la richiamo :(
 // ho messo una prova di una mia Func_1 commentata nel main

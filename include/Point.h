@@ -2,7 +2,7 @@
 #define POINT_H
 #include <ostream>
 
-class Point 
+class Point
 {
   public:
     class PointNotExpected {};
@@ -10,11 +10,11 @@ class Point
     Point(const Point& p);
     double GetX() const { return x; }
     double GetY() const { return y; }
-
   private:
     double x, y;
 };
 
 // siamo costretti a fare l'overloading come helper function
 std::ostream &operator<<(std::ostream &os, const Point &p);
+
 #endif

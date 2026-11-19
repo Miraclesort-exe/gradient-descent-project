@@ -5,16 +5,22 @@
 #include <iostream>
 #include <ostream>
 
-class Function 
+class Function
 {
   public:
     class CritPointNotFound {};
-
+    // costruttore
     Function(int k = 0, Point pk = {});
 
-    virtual double f(Point p); // funzione nel punto
-    virtual double Gradient_x(Point p); // componente x del gradiente nel punto
-    virtual double Gradient_y(Point p); // componente y del gradiente nel punto
+    // distruttore virtuale
+    virtual ~Function() = default;
+
+    // funzioni che vanno = 0 cosi' da non poter essere
+    // invocare dalla classe padre
+    virtual double f(Point p) const = 0;  // funzione nel punto
+    virtual double Gradient_x(Point p) const = 0;  // componente x del gradiente nel punto
+    virtual double Gradient_y(Point p) const = 0;  // componente y del gradiente nel punto
+    // funzioni comuni a tutte e 8 le funzioni
     double CurrentError(double f_in_pk, double min_value);
     Point GradientDescent(Point p0, double f_in_p0);
 

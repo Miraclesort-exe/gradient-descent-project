@@ -12,6 +12,13 @@ Mannarino Francesco_: f1, f3, f5, f7;
 Verza Federico______: f2, f4, f6, f8;
 
 
+Utilizzo di IA:
+    -specifica di utilizzo dell'operatore override(domanda: bisogna solo scriverlo nel file header o anche nel cpp? risposta
+                        solo file .h)
+    -consiglio per fare il tester di una funzione operator<< (ha permesso di conoscere l'esistenza della libreria
+                        standard sstream e la funzione std::ostringstream della suddetta classe che crea un oggetto che può essere usato come una stringa e che può "stoccare" un oggetto cout, in altre parole converte un oggetto cout in una stringa)
+
+
 
 Difficoltà incontrate:
     -indentazione automatica di alcuni editor rendeva i file molto diversi tra loro

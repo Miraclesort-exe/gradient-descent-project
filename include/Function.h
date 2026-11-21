@@ -32,4 +32,6 @@ class Function
     std::ostream &toString();                                                               // toString come da specifiche
 };
 
+double Pi();
+
 #endif

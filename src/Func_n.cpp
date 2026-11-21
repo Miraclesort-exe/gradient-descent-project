@@ -118,13 +118,13 @@ double Func_7::Gradient_y(Point p) const                    // f7'(y) = 2y * e^{
 // f8(x, y) = 2 -cos(pi*x) -cos(pi*y)
 double Func_8::f(Point p) const
 {
-    return (2.0 - std::cos((std::numbers::pi)*p.GetX())) - std::cos((std::numbers::pi)*p.GetY());
+    return (2.0 - std::cos((Pi())*p.GetX())) - std::cos((Pi())*p.GetY());
 };
 double Func_8::Gradient_x(Point p) const                    // f8'(x)= pi * sin( pi* x)
 {
-    return ((std::numbers::pi)*std::sin((std::numbers::pi)*p.GetX()));
+    return ((Pi())*std::sin((Pi())*p.GetX()));
 };
 double Func_8::Gradient_y(Point p) const                    // f8'(y)= pi * sin( pi* y)
 {
-    return ((std::numbers::pi)*std::sin((std::numbers::pi)*p.GetY()));
+    return ((Pi())*std::sin((Pi())*p.GetY()));
 };

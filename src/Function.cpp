@@ -74,3 +74,8 @@ std::ostream &Function::toString()
                    << "Norma del gradiente nel passo corrente: "
                    << GradientNorm(Gradient_x(pk), Gradient_y(pk));
 }
+
+double Pi()
+{
+  return atan(1) * 4;
+}

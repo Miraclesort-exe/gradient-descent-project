@@ -5,9 +5,9 @@
 class Point
 {
   public:
-    class PointNotExpected {};
-    Point(double x = 0, double y = 0);
-    Point(const Point& p);
+    class PointNotExpected {}; // ???
+    Point(double x = 0, double y = 0); // costruttore
+    Point(const Point& p); // costruttore di copia
     double GetX() const { return x; }
     double GetY() const { return y; }
   private:

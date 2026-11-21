@@ -6,7 +6,7 @@ Function::Function(int k, Point pk)     //costruttore
 {}
 //---------------------------------------------------------------------------------------------------
 // le 3 funzioni che devono essere ridefinite nelle classi persenti in Func_n.h
-            //Se chiamate dall'utente senza passare per nessuna classe di Func_n.h daranno sempre come risultato 0
+//Se chiamate dall'utente senza passare per nessuna classe di Func_n.h daranno sempre come risultato 0
 double Function::f(Point pk) const
             {
             return 0.0;

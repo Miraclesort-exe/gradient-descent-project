@@ -1,6 +1,7 @@
 #include "../include/Func_n.h"
 #include <cmath>
 #include <numbers>
+
 // f1(x, y) = (x^2 + y^2) / 2
 double Func_1::f(Point p) const
 {
@@ -15,7 +16,6 @@ double Func_1::Gradient_y(Point p) const
     return p.GetY();
 }
 
-//---------------------------------------------------------------------
 // f2(x, y) = (x^2 + 16y^2)/2
 double Func_2::f(Point p) const
 {
@@ -30,23 +30,24 @@ double Func_2::Gradient_y(Point p) const                    // f2'(y)= 16y
 {
     return (16.0 * p.GetY());
 };
-//---------------------------------------------------------------------
-/*
-// f3(x, y) =
+
+// f3(x, y) = (x^2 - 1)^2 + y^2
 double Func_3::f(Point p) const
 {
-    return 0;
+    double x = p.GetX();
+    double y = p.GetY();
+    return std::pow(x * x - 1.0, 2.0) + y * y;
 }
-double Func_3::Gradient_x(Point p) const
+double Func_3::Gradient_x(Point p) const                    // f3'(x) = 4x(x^2 - 1)
 {
-    return p.GetX();
+    double x = p.GetX();
+    return 4.0 * x * (x * x - 1.0);
 }
-double Func_3::Gradient_y(Point p) const
+double Func_3::Gradient_y(Point p) const                    // f3'(y) = 2y
 {
-    return p.GetY();
+    return 2.0 * p.GetY();
 }
-*/
-//---------------------------------------------------------------------
+
 // f4(x, y) = [x^2 -1]^2 + [(x-1)^2]/5 + y^2
 double Func_4::f(Point p) const
 {
@@ -63,23 +64,23 @@ double Func_4::Gradient_y(Point p) const                    // f4'(y) = y
 {
     return p.GetY();
 };
-//---------------------------------------------------------------------
-/*
-// f5(x, y) =
-double Func_5::f(Point p) const
-{
-    return 0;
+
+// f5(x, y) = 4 * sinh^2(x / 2) + y^2
+double Func_5::f(Point p) const{
+    double x = p.GetX();
+    double y = p.GetY();
+    return 4.0 * std::pow(std::sinh(x / 2.0), 2.0) + y * y;
 }
-double Func_5::Gradient_x(Point p) const
+double Func_5::Gradient_x(Point p) const                    // f5'(x) = 4 * sinh(x/2) * cosh(x/2)
 {
-    return p.GetX();
+    double x = p.GetX();
+    return 4.0 * std::sinh(x / 2.0) * std::cosh(x / 2.0);
 }
-double Func_5::Gradient_y(Point p) const
+double Func_5::Gradient_y(Point p) const                    // f5'(y) = 2y
 {
-    return p.GetY();
+    return 2.0 * p.GetY();
 }
-*/
-//---------------------------------------------------------------------
+
 // f6(x, y) = ln(1+ x^2 + y^2)
 double Func_6::f(Point p) const
 {
@@ -93,25 +94,27 @@ double Func_6::Gradient_y(Point p) const                    // f6'(y) = 2y/(1+ x
 {
     return (2 * p.GetY()) / (1 + std::pow(p.GetX(), 2) + std::pow(p.GetY(), 2));
 };
-//---------------------------------------------------------------------
 
-/*
-// f7(x, y) =
+// f7(x, y) = 1 - e^{-(x^2 + y^2)}
 double Func_7::f(Point p) const
 {
-    return 0;
+    double x = p.GetX();
+    double y = p.GetY();
+    return 1.0 - std::exp(-(x * x + y * y));
 }
-double Func_7::Gradient_x(Point p) const
+double Func_7::Gradient_x(Point p) const                    // f7'(x) = 2x * e^{-(x^2 + y^2)}
 {
-    return p.GetX();
+    double x = p.GetX();
+    double y = p.GetY();
+    return 2.0 * x * std::exp(-(x * x + y * y));
 }
-double Func_7::Gradient_y(Point p) const
+double Func_7::Gradient_y(Point p) const                    // f7'(y) = 2y * e^{-(x^2 + y^2)}
 {
-    return p.GetY();
+    double x = p.GetX();
+    double y = p.GetY();
+    return 2.0 * y * std::exp(-(x * x + y * y));
 }
-*/
 
-//---------------------------------------------------------------------
 // f8(x, y) = 2 -cos(pi*x) -cos(pi*y)
 double Func_8::f(Point p) const
 {
@@ -119,10 +122,9 @@ double Func_8::f(Point p) const
 };
 double Func_8::Gradient_x(Point p) const                    // f8'(x)= pi * sin( pi* x)
 {
-    return ((std::numbers::pi)*sin((std::numbers::pi)*p.GetX()));
+    return ((std::numbers::pi)*std::sin((std::numbers::pi)*p.GetX()));
 };
 double Func_8::Gradient_y(Point p) const                    // f8'(y)= pi * sin( pi* y)
 {
-    return ((std::numbers::pi)*sin((std::numbers::pi)*p.GetY()));
+    return ((std::numbers::pi)*std::sin((std::numbers::pi)*p.GetY()));
 };
-//---------------------------------------------------------------------

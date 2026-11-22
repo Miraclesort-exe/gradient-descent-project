@@ -32,6 +32,7 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
       ++k;
     }
   }
+  pk = p0;
   toString();
   throw CritPointNotFound();
 }

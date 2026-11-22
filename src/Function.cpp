@@ -19,7 +19,8 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
     if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       // si ferma se è nella tolleranza
     {
       std::cout << "Trovato un possibile punto critico: ";
-      toString();                                                     // e chiama toString
+      toString();                                                   // e chiama toString
+      return p0;
     }
     else
     {

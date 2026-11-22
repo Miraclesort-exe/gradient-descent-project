@@ -1,5 +1,5 @@
-#include "../include/Function.h"
 #include <cmath>
+#include "../include/Function.h"
 
 Function::Function(double min_value)     //costruttore
   : min_value{min_value}

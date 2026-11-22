@@ -1,59 +1,41 @@
 #include "../include/Function.h"
 #include <cmath>
 
-Function::Function(int k, Point pk)     //costruttore
-  : k{k}, pk{pk}
+Function::Function(int k, Point pk, double min_value)     //costruttore
+  : k{k}, pk{pk}, min_value{min_value}
 {}
-//---------------------------------------------------------------------------------------------------
-// le 3 funzioni che devono essere ridefinite nelle classi persenti in Func_n.h
-//Se chiamate dall'utente senza passare per nessuna classe di Func_n.h daranno sempre come risultato 0
-double Function::f(Point pk) const
+
+double Function::CurrentError(double f_in_pk)
             {
-            return 0.0;
-            }
-double Function::Gradient_x(Point p) const
-            {
-            return 0.0;
-            }
-double Function::Gradient_y(Point p) const
-            {
-            return 0.0;
-            }
-//---------------------------------------------------------------------------------------------------
-// funzioni comuni da definire qui'
-double Function::CurrentError(double f_in_pk, double min_value) //errore massimo in un dato punto??????????????????????
-            {
-            return f_in_pk - min_value;
+            return f_in_pk - MinValue();
             }
 
-Point Function::GradientDescent(Point p0, double f_in_p0)
-    {
-    int max_iterations = 10000; // numero massimo possibile di iterazioni, da decidere CAMBIO A 100 BY FED
-    double tolerance = 0.00001; // tolleranza per il punto quasi-critico, da decidere
-    double a = 0.25;
-    while (k <= max_iterations)
-    {
-        if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       //si ferma se è nella tolleranza debugging per capire che fa
-        {
-            toString();                                                     //e spara il toString debugging per capire che fa
-            return p0;
-        }
-        else
-        {
-            p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
-            if (k % 10 == 0)
-            {
-                toString();
-            }
-        ++k;
-        }
-    }
-    throw CritPointNotFound();
-    }
-
-  double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
+Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, double a)
 {
-  return sqrt(pow(gradient_x_in_p, 2) + pow(gradient_y_in_p, 2));
+  while (k <= max_iterations)
+  {
+    pk = p0;
+    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       //si ferma se è nella tolleranza debugging per capire che fa
+    {
+      toString();                                                     //e spara il toString debugging per capire che fa
+      return p0;
+    }
+    else
+    {
+      p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
+      if (k % 10 == 0)
+      {
+        toString();
+      }
+      ++k;
+    }
+  }
+  throw CritPointNotFound();
+}
+
+double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
+{
+  return sqrt(std::pow(gradient_x_in_p, 2) + std::pow(gradient_y_in_p, 2));
 }
 
 Point Function::NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double a)
@@ -70,7 +52,7 @@ std::ostream &Function::toString()
                    << "Passo corrente: " << pk << '\t'
                    << "Funzione nel passo corrente: " << f(pk) << '\t'
                    << "Errore corrente: "
-                   << CurrentError(f(pk), f(GradientDescent(pk, f(pk)))) << '\t' // possibile problema di stack overflow
+                   << CurrentError(f(pk)) << '\t'
                    << "Norma del gradiente nel passo corrente: "
                    << GradientNorm(Gradient_x(pk), Gradient_y(pk));
 }

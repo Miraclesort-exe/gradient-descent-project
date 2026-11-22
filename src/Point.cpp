@@ -4,9 +4,10 @@ Point::Point(double x, double y)  // ho tolto gli =0 perche' gia' presenti nel .
   : x{x}, y{y}
 {}
 
-Point::Point(const Point& p)
+/*Point::Point(const Point& p)  // basta il costruttore di copia fornito dal compilatore
   : x{p.GetX()}, y{p.GetY()}
 {}
+*/
 
 std::ostream &operator<<(std::ostream &os, const Point &p)
 {

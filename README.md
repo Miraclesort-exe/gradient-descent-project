@@ -3,11 +3,10 @@ progetto intermedio laboratorio C++
 
 
 
-
-Implementazione classe Function genitore delle classi Func_n (con n da 1 a 8):
+Implementazione classe Point e classe Function genitore delle classi Func_n (con n da 1 a 8):
 Varponi Leonardo
 
-divisione implemaentazione classi della funzioni singole nel file Func_n.h e Func_n.cpp:
+divisione implementazione classi della funzioni singole nel file Func_n.h e Func_n.cpp:
 Mannarino Francesco_: f1, f3, f5, f7;
 Verza Federico______: f2, f4, f6, f8;
 

@@ -1,6 +1,5 @@
 #include "../include/Func_n.h"
 #include <cmath>
-#include <numbers>
 
 // f1(x, y) = (x^2 + y^2) / 2
 double Func_1::f(Point p) const
@@ -54,15 +53,15 @@ double Func_4::f(Point p) const
     double res = pow(pow(p.GetX(), 2.0) - 1.0, 2.0) + (pow(p.GetX() - 1, 2.0)) / 5.0 + pow(p.GetY(), 2.0);
     return res;
 };
-double Func_4::Gradient_x(Point p) const                    // f4'(x)= 4x(x^2 -1)+ (2X -1)/5
+double Func_4::Gradient_x(Point p) const                    // f4'(x)= 4x(x^2-1)+ 2(x-1)/5
 {
     double x = p.GetX();
-    double res = 4.0 * x * (std::pow(x, 2.0) - 1) + (2.0 * x - 1.0) / 5.0;
-    return p.GetX();
+    double res = 4.0 * x * (std::pow(x, 2.0) - 1) + (2.0 * (x - 1.0) / 5.0);
+    return res;
 };
 double Func_4::Gradient_y(Point p) const                    // f4'(y) = y
 {
-    return p.GetY();
+    return 2 * p.GetY();
 };
 
 // f5(x, y) = 4 * sinh^2(x / 2) + y^2

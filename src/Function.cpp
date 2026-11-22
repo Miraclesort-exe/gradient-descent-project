@@ -1,8 +1,8 @@
 #include "../include/Function.h"
 #include <cmath>
 
-Function::Function(int k, Point pk, double min_value)     //costruttore
-  : k{k}, pk{pk}, min_value{min_value}
+Function::Function(double min_value)     //costruttore
+  : min_value{min_value}
 {}
 
 double Function::CurrentError(double f_in_pk)
@@ -12,6 +12,7 @@ double Function::CurrentError(double f_in_pk)
 
 Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, double a)
 {
+  k = 0;
   while (k <= max_iterations)
   {
     pk = p0;

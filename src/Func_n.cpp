@@ -1,5 +1,5 @@
-#include "../include/Func_n.h"
 #include <cmath>
+#include "../include/Func_n.h"
 
 // f1(x, y) = (x^2 + y^2) / 2
 Func_1::Func_1()

@@ -5,5 +5,6 @@
 
 int main() {
     std::cout<< "Test della funzione n°1";
+    
     return 0;
 }

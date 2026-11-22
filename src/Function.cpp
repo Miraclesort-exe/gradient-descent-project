@@ -13,24 +13,25 @@ double Function::CurrentError(double f_in_pk)
 Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, double a)
 {
   k = 0;
-  while (k <= max_iterations)
+  while (k < max_iterations)
   {
     pk = p0;
-    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       //si ferma se è nella tolleranza debugging per capire che fa
+    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       // si ferma se è nella tolleranza
     {
-      toString();                                                     //e spara il toString debugging per capire che fa
-      return p0;
+      std::cout << "Trovato un possibile punto critico: ";
+      toString();                                                     // e chiama toString
     }
     else
     {
       p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
       if (k % 10 == 0)
       {
-        toString();
+        toString(); // toString viene chiamato comunque ogni 10 iterazioni
       }
       ++k;
     }
   }
+  toString();
   throw CritPointNotFound();
 }
 
@@ -55,7 +56,7 @@ std::ostream &Function::toString()
                    << "Errore corrente: "
                    << CurrentError(f(pk)) << '\t'
                    << "Norma del gradiente nel passo corrente: "
-                   << GradientNorm(Gradient_x(pk), Gradient_y(pk));
+                   << GradientNorm(Gradient_x(pk), Gradient_y(pk)) << '\n';
 }
 
 double Pi()

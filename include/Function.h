@@ -13,7 +13,7 @@ class Function
     Function(int k = 0, Point pk = {}, double min_value = 0); // costruttore della funzione (k: numero corrente iterazione GradientDescent, pk: punto di partenza per GradientDescent)
 
     double CurrentError(double f_in_pk);      // calcolo errore nel punto corrente
-    Point GradientDescent(Point p0, int max_iterations = 100000, double tolerance = 0.00001, double a);            // algoritmo di discesa del gradiente per trovare il minimo
+    Point GradientDescent(Point p0, int max_iterations = 100000, double tolerance = 0.00001, double a = 0.25);            // algoritmo di discesa del gradiente per trovare il minimo
     
     
     // funzioni che vanno = 0 cosi' da non poter essere

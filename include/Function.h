@@ -10,7 +10,7 @@ class Function
   public:
     class CritPointNotFound {};                                 // classe di supporto in caso GradientDescent non trovi un punto critico
     // costruttore
-    Function(int k = 0, Point pk = {}, double min_value = 0); // costruttore della funzione (k: numero corrente iterazione GradientDescent, pk: punto di partenza per GradientDescent)
+    Function(double min_value = 0); // costruttore della funzione (k: numero corrente iterazione GradientDescent, pk: punto di partenza per GradientDescent)
 
     double CurrentError(double f_in_pk);      // calcolo errore nel punto corrente
     Point GradientDescent(Point p0, int max_iterations = 100000, double tolerance = 0.00001, double a = 0.25);            // algoritmo di discesa del gradiente per trovare il minimo
@@ -26,7 +26,7 @@ class Function
     
 
   private:
-    int k;
+    int k = 0;
     Point pk;
     double min_value;
     double GradientNorm(double gradient_x_in_p, double gradient_y_in_p);                    // norma del gradiente per calcolo GradientDescent

@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(${PROJECT_NAME}
-    src/main.cpp
+    src/Tester.cpp
     src/Function.cpp
     src/Func_n.cpp
     src/Point.cpp

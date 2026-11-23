@@ -1,8 +1,8 @@
 #include <cmath>
 #include "../include/Function.h"
 
-Function::Function(double min_value)     //costruttore
-  : min_value{min_value}
+Function::Function(double expected_min)     //costruttore
+  : expected_min{expected_min}
 {}
 
 double Function::CurrentError(double f_in_pk)
@@ -22,15 +22,12 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
       toString();                                                   // e chiama toString
       return p0;
     }
-    else
+    p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
+    if (k % 10 == 0)
     {
-      p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
-      if (k % 10 == 0)
-      {
-        toString(); // toString viene chiamato comunque ogni 10 iterazioni
-      }
-      ++k;
+      toString(); // toString viene chiamato comunque ogni 10 iterazioni
     }
+    ++k;
   }
   pk = p0;
   toString();
@@ -42,10 +39,10 @@ double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
   return sqrt(std::pow(gradient_x_in_p, 2) + std::pow(gradient_y_in_p, 2));
 }
 
-Point Function::NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double a)
+Point Function::NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double step)
 {
-  double new_x = pk.GetX() - (a * gradient_x_in_pk);
-  double new_y = pk.GetY() - (a * gradient_y_in_pk);
+  double new_x = pk.GetX() - (step * gradient_x_in_pk);
+  double new_y = pk.GetY() - (step * gradient_y_in_pk);
   Point next_p{new_x, new_y};
   return next_p;
 }

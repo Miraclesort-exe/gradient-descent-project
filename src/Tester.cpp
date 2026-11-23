@@ -29,37 +29,20 @@ void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double c
 {
     try
     {
-        std::cout << "Test della funzione n°" << num_f << " con a = 0.25\n";
-        std::cout << "\nFunzione nel punto " << partenza_p << ": "
-                  << fun.f(partenza_p) << '\n'
-                  << "Derivata parziale in x nel punto " << partenza_p << ": "
-                  << fun.Gradient_x(partenza_p) << '\n'
-                  << "Derivata parziale in y nel punto " << partenza_p << ": "
-                  << fun.Gradient_y(partenza_p) << '\n'
-                  << "Ricerca di un possibile punto critico a partire da "
-                  << partenza_p << ": "
-                  << fun.GradientDescent(partenza_p, 100000, 0.00001, given_a)
-                  << "\n\n";
+        std::cout << "Test della funzione n°" << num_f << " con a = " << given_a << '\n';
+        std::cout << fun.GradientDescent(partenza_p, 100000, 0.00001, given_a);
     }
-    catch (const Function::CritPointNotFoundException &)
+    catch (const Function::CritPointNotFoundException&)
     {
         std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
     }
 
     try
     {
-        std::cout << "Test della funzione n°" << num_f << " con a = 0.99\n";
-        std::cout << "\nFunzione nel punto " << partenza_p << ": "
-                  << fun.f(partenza_p) << '\n'
-                  << "Derivata parziale in x nel punto " << partenza_p << ": "
-                  << fun.Gradient_x(partenza_p) << '\n'
-                  << "Derivata parziale in y nel punto " << partenza_p << ": "
-                  << fun.Gradient_y(partenza_p) << '\n'
-                  << "Ricerca di un possibile punto critico a partire da "
-                  << partenza_p << ": "
-                  << fun.GradientDescent(partenza_p, 100, 0.00001, chosen_a) << "\n\n";
+        std::cout << "Test della funzione n°" << num_f << " con a = " << chosen_a << '\n';
+        std::cout << fun.GradientDescent(partenza_p, 100000, 0.00001, chosen_a);
     }
-    catch (const Function::CritPointNotFoundException &) {
+    catch (const Function::CritPointNotFoundException&) {
         std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
     }
 }

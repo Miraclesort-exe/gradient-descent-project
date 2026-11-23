@@ -11,6 +11,8 @@ class Function
     class CritPointNotFound {}; // classe di supporto in caso GradientDescent non trovi un punto critico
     // costruttore
     Function(double expected_min = 0); // costruttore della funzione
+    Function(Function& f) = delete; // costruttore di copia disabilitato
+    Function& operator=(const Function&) = delete;
 
     double CurrentError(double f_in_pk); // calcolo errore nel punto corrente
     Point GradientDescent(Point p0, int max_iterations = 100000, double tolerance = 0.00001, double step = 0.25); // algoritmo di discesa del gradiente per trovare il minimo

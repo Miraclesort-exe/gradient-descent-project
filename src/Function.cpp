@@ -18,7 +18,7 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
     pk = p0;
     if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       // si ferma se è nella tolleranza
     {
-      std::cout << "Trovato un possibile punto critico: ";
+      std::cout << "Trovato un possibile punto critico: " << '\n';
       toString();                                                   // e chiama toString
       return p0;
     }
@@ -49,13 +49,15 @@ Point Function::NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in
 
 std::ostream &Function::toString()
 {
-  return std::cout << "Numero iterazioni: " << k << '\t'
-                   << "Passo corrente: " << pk << '\t'
-                   << "Funzione nel passo corrente: " << f(pk) << '\t'
+  return std::cout << "---------------------------------" << '\n'
+                   << "Numero iterazioni: " << k << '\n'
+                   << "Passo corrente: " << pk << '\n'
+                   << "Funzione nel passo corrente: " << f(pk) << '\n'
                    << "Errore corrente: "
-                   << CurrentError(f(pk)) << '\t'
+                   << CurrentError(f(pk)) << '\n'
                    << "Norma del gradiente nel passo corrente: "
-                   << GradientNorm(Gradient_x(pk), Gradient_y(pk)) << '\n';
+                   << GradientNorm(Gradient_x(pk), Gradient_y(pk)) << '\n'
+                   << "---------------------------------" << '\n';
 }
 
 double Pi()

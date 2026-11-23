@@ -1,7 +1,7 @@
 #include <cmath>
 #include "../include/Function.h"
 
-Function::Function(double expected_min)     //costruttore
+Function::Function(double expected_min)
   : expected_min{expected_min}
 {}
 
@@ -16,16 +16,16 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
   while (k < max_iterations)
   {
     pk = p0;
-    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance)       // si ferma se è nella tolleranza
+    if (GradientNorm(Gradient_x(p0), Gradient_y(p0)) < tolerance) // si ferma se è nella tolleranza
     {
       std::cout << "Trovato un possibile punto critico: " << '\n';
-      toString();                                                   // e chiama toString
+      toString();
       return p0;
     }
     p0 = NextStep(p0, Gradient_x(p0), Gradient_y(p0), a);
     if (k % 10 == 0)
     {
-      toString(); // toString viene chiamato comunque ogni 10 iterazioni
+      toString(); // toString viene chiamato ogni 10 iterazioni
     }
     ++k;
   }
@@ -43,7 +43,7 @@ Point Function::NextStep(const Point& p, double gradient_x_in_p, double gradient
 {
   double new_x = p.GetX() - (step * gradient_x_in_p);
   double new_y = p.GetY() - (step * gradient_y_in_p);
-  Point next_p{new_x, new_y};
+  Point next_p{new_x, new_y}; // f(p) - a∇f(p)
   return next_p;
 }
 

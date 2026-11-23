@@ -3,9 +3,9 @@ progetto intermedio laboratorio C++
 
 gruppo: MiracleSort
 componenti gruppo:  
-	-Mannarino Francesco  
-	-Varponi Leonardo  
-	-Verza Federico  
+	-frmanna
+	-Ar5ene2705
+	-Fed55-55
 
 ## Idea:  
 Utilizzo dell'ereditarietà
@@ -14,11 +14,11 @@ Le 8 classi specifiche definite all'interno del file Func_n.h e implementate nel
 
 ## Divisione dei compiti:  
 Implementazione classe Point e classe Function genitore delle classi Func_n (con n da 1 a 8):  
-    -Varponi Leonardo  
+    -Ar5ene2705 
 
 divisione implementazione classi della funzioni singole nel file Func_n.h e Func_n.cpp:  
-    -Mannarino Francesco_: f1, f3, f5, f7;  
-    -Verza Federico______: f2, f4, f6, f8;  
+    -frmanna----: f1, f3, f5, f7;  
+    -Fed55-55---: f2, f4, f6, f8;  
 
 Tutte le componenti del gruppo hanno lavorato su:  
     -I File README.txt, Tester.cpp  

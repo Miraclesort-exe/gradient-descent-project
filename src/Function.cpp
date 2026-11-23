@@ -31,7 +31,7 @@ Point Function::GradientDescent(Point p0, int max_iterations, double tolerance, 
   }
   pk = p0;
   toString();
-  throw CritPointNotFound();
+  throw CritPointNotFoundException();
 }
 
 double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
@@ -39,15 +39,15 @@ double Function::GradientNorm(double gradient_x_in_p, double gradient_y_in_p)
   return sqrt(std::pow(gradient_x_in_p, 2) + std::pow(gradient_y_in_p, 2));
 }
 
-Point Function::NextStep(Point pk, double gradient_x_in_pk, double gradient_y_in_pk, double step)
+Point Function::NextStep(const Point& p, double gradient_x_in_p, double gradient_y_in_p, double step)
 {
-  double new_x = pk.GetX() - (step * gradient_x_in_pk);
-  double new_y = pk.GetY() - (step * gradient_y_in_pk);
+  double new_x = p.GetX() - (step * gradient_x_in_p);
+  double new_y = p.GetY() - (step * gradient_y_in_p);
   Point next_p{new_x, new_y};
   return next_p;
 }
 
-std::ostream &Function::toString()
+std::ostream& Function::toString()
 {
   return std::cout << "---------------------------------" << '\n'
                    << "Numero iterazioni: " << k << '\n'

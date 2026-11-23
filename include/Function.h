@@ -11,7 +11,7 @@ class Function
     class CritPointNotFoundException {}; // eccezione per GradientDescent
     
     // gestione degli oggetti
-    Function(double expected_min = 0);
+    Function(double expected_min = 0); // costruttore della funzione
     Function(Function& f) = delete; // costruttore di copia disabilitato
     Function& operator=(const Function&) = delete; // assegnamento di copia disabilitato
     virtual ~Function() = default; // in caso venisse creato Function* f = new Function
@@ -32,13 +32,10 @@ class Function
     Point pk;
     double expected_min;
 
-    // funzioni chiamate all'interno di GradientDescent
-    double GradientNorm(double gradient_x_in_p, double gradient_y_in_p);
-    Point NextStep(const Point& pk, double gradient_x_in_pk, double gradient_y_in_pk, double a); // punto successivo
-    std::ostream& toString();
-
+    double GradientNorm(double gradient_x_in_p, double gradient_y_in_p);                    // norma del gradiente
+    Point NextStep(const Point& pk, double gradient_x_in_pk, double gradient_y_in_pk, double a);   // punto successivo per GradientDescent
     double MinValue() {return expected_min;}
-    
+    std::ostream& toString();
 };
 
 double Pi(); // alternativa c++17 a std::numbers::pi (solo c++20)

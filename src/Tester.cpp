@@ -43,7 +43,7 @@ void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double c
     }
     catch (const Function::CritPointNotFoundException &)
     {
-        std::cerr << "Non sono stati trovati punti critici per la funzione f1\n\n";
+        std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
     }
 
     try
@@ -60,6 +60,6 @@ void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double c
                   << fun.GradientDescent(partenza_p, 100, 0.00001, chosen_a) << "\n\n";
     }
     catch (const Function::CritPointNotFoundException &) {
-        std::cerr << "Non sono stati trovati punti critici per la funzione f1\n\n";
+        std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
     }
 }

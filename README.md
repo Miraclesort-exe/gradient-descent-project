@@ -1,6 +1,20 @@
 # gradient-descent-project
 progetto intermedio laboratorio C++
 
+gruppo: MiracleSort
+componenti gruppo:
+	-Mannarino Francesco
+	-Varponi Leonardo
+	-Verza Federico
+
+Idea di base
+Facciamo utilizzo dell'ereditarietà
+Abbiamo creato una classe Function che descrive le funzioni per la ricerca del minimo e il calcolo del prossimo punto su cui fare la ricerca del minimo
+Le 8 classi definite all'interno del file Func_n.h e implementate nel file Func_n.cpp rappresentano le funzioni richieste da== == = =====================
+
+
+
+
 
 
 Implementazione classe Point e classe Function genitore delle classi Func_n (con n da 1 a 8):

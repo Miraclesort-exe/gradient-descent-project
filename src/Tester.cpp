@@ -1,7 +1,7 @@
 #include "../include/Func_n.h"
 #include <iostream>
 
-void test_f(Function &fun, int num_f, Point partenza_p);
+void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double chosen_a);
 
 int main() {
     Func_1 f1;
@@ -13,14 +13,14 @@ int main() {
     Func_7 f7;
     Func_8 f8;
   
-    test_f(f1, 1, Point{-3, 2}, 0.25, 0.99); // (-3,2) è all'interno del dominio dato [-4,4]x[-4,4]
-    test_f(f2, 2, Point{1000, 1000});
-    test_f(f3, 3, Point{1000, 1000});
-    test_f(f4, 4, Point{1000, 1000});
-    test_f(f5, 5, Point{1000, 1000});
-    test_f(f6, 6, Point{1000, 1000});
-    test_f(f7, 7, Point{1000, 1000});
-    test_f(f8, 8, Point{1000, 1000});
+    test_f(f1, 1, Point{-3, 2}, 0.25, 0.99);
+    test_f(f2, 2, Point{-2, 4}, 0.08, 0.50);
+    test_f(f3, 3, Point{-1.2, 0.8}, 0.05, 0.1);
+    test_f(f4, 4, Point{-1.5, 0.1}, 0.05, 0.2);
+    test_f(f5, 5, Point{-1, 1}, 0.15, 0.45);
+    test_f(f6, 6, Point{-2, 1}, 0.3, 0.7);
+    test_f(f7, 7, Point{-0.3, 1.2}, 0.25, 0.93);
+    test_f(f8, 8, Point{-2, 2}, 0.1, 0.4);
   
     return 0;
 }

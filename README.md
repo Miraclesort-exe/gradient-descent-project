@@ -3,9 +3,9 @@ progetto intermedio laboratorio C++
 
 gruppo: MiracleSort
 componenti gruppo:  
-	-Mannarino Francesco
-	-Varponi Leonardo
-	-Verza Federico
+	-Mannarino Francesco  
+	-Varponi Leonardo  
+	-Verza Federico  
 
 ## Idea:  
 Utilizzo dell'ereditarietà
@@ -26,10 +26,10 @@ Tutte le componenti del gruppo hanno lavorato su:
     -Correzione indentazione dell'output finale 
 
 ## Difficoltà incontrate: 
-### Difficoltà non risolte:
+### Non risolte:
 -null
 
-### Difficoltà risolte:
+### Risolte:
 -indentazione automatica di alcuni editor rendeva i file molto diversi tra loro
 - rottura del pc di Verza Federico in data 16/11
     resolved in date 19/11

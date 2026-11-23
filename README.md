@@ -31,7 +31,7 @@ Tutte le componenti del gruppo hanno lavorato su:
 
 ### Risolte:  
 -indentazione automatica di alcuni editor rendeva i file molto diversi tra loro  
-- rottura del pc di Verza Federico in data 16/11  
+- rottura del pc di Fed55-55 in data 16/11  
     resolved in date 19/11  
     conseguenze: parte del lavoro è rimasta in stallo durante i tre giorni di fermo  
 -riscrittura di parte delle firme delle varie funzioni per renderle più autoesplicative(avvenuta negli ultimi giorni)

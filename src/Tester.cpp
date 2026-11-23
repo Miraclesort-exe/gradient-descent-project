@@ -14,7 +14,7 @@ int main() {
     Func_8 f8;
   
     test_f(f1, 1, Point{-3, 2}, 0.25, 0.99);
-    test_f(f2, 2, Point{-2, 4}, 0.08, 0.50);
+    test_f(f2, 2, Point{-2, 3}, 0.0225, 0.1);
     test_f(f3, 3, Point{-1.2, 0.8}, 0.05, 0.1);
     test_f(f4, 4, Point{-1.5, 0.1}, 0.05, 0.2);
     test_f(f5, 5, Point{-1, 1}, 0.15, 0.45);

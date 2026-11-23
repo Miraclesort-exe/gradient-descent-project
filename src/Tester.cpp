@@ -13,7 +13,7 @@ int main() {
     Func_7 f7;
     Func_8 f8;
   
-    test_f(f1, 1, Point{1000, 1000});
+    test_f(f1, 1, Point{-3, 2}, 0.25, 0.99); // (-3,2) è all'interno del dominio dato [-4,4]x[-4,4]
     test_f(f2, 2, Point{1000, 1000});
     test_f(f3, 3, Point{1000, 1000});
     test_f(f4, 4, Point{1000, 1000});
@@ -25,7 +25,7 @@ int main() {
     return 0;
 }
 
-void test_f(Function &fun, int num_f, Point partenza_p)
+void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double chosen_a)
 {
     try
     {
@@ -38,7 +38,7 @@ void test_f(Function &fun, int num_f, Point partenza_p)
                   << fun.Gradient_y(partenza_p) << '\n'
                   << "Ricerca di un possibile punto critico a partire da "
                   << partenza_p << ": "
-                  << fun.GradientDescent(partenza_p, 100000, 0.00001, 0.25)
+                  << fun.GradientDescent(partenza_p, 100000, 0.00001, given_a)
                   << "\n\n";
     }
     catch (const Function::CritPointNotFoundException &)
@@ -57,7 +57,7 @@ void test_f(Function &fun, int num_f, Point partenza_p)
                   << fun.Gradient_y(partenza_p) << '\n'
                   << "Ricerca di un possibile punto critico a partire da "
                   << partenza_p << ": "
-                  << fun.GradientDescent(partenza_p, 100, 0.00001, 0.99) << "\n\n";
+                  << fun.GradientDescent(partenza_p, 100, 0.00001, chosen_a) << "\n\n";
     }
     catch (const Function::CritPointNotFoundException &) {
         std::cerr << "Non sono stati trovati punti critici per la funzione f1\n\n";

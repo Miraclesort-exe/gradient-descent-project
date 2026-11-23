@@ -31,18 +31,22 @@ void test_f(Function &fun, int num_f, Point partenza_p, double given_a, double c
     {
         std::cout << "Test della funzione n°" << num_f << " con a = " << given_a << '\n';
         std::cout << fun.GradientDescent(partenza_p, 100000, 0.00001, given_a);
+        std::cout << "\n\n" << "^^^^^^^^^^[FINE TEST]^^^^^^^^^^" << "\n\n";
     }
     catch (const Function::CritPointNotFoundException&)
     {
         std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
+        std::cout << "\n\n" << "^^^^^^^^^^[FINE TEST]^^^^^^^^^^" << "\n\n";
     }
 
     try
     {
         std::cout << "Test della funzione n°" << num_f << " con a = " << chosen_a << '\n';
         std::cout << fun.GradientDescent(partenza_p, 100000, 0.00001, chosen_a);
+        std::cout << "\n\n" << "^^^^^^^^^^[FINE TEST]^^^^^^^^^^" << "\n\n";
     }
     catch (const Function::CritPointNotFoundException&) {
         std::cerr << "Non sono stati trovati punti critici per la funzione f" << num_f << "\n\n";
+        std::cout << "\n\n" << "^^^^^^^^^^[FINE TEST]^^^^^^^^^^" << "\n\n";
     }
 }
